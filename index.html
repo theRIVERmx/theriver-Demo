@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> theRiver Map </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/river.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinNice.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div id="main">
+
+  <!--FilterNav -->
+    <ul id="filter-bar">
+    <!-- Stay Button -->
+      <li class="check-list">
+        <input type="checkbox" name="check-buttons" id="stay" class="buttons">
+        <label for="stay"></label>
+      </li>
+
+    <!-- Meet Button -->
+      <li class="check-list">
+        <input type="checkbox" name="check-buttons" id="meet" class="buttons">
+        <label for="meet"></label>
+      </li>
+
+    <!-- Create Button -->
+      <li class="check-list">
+        <input type="checkbox" name="check-buttons" id="create" class="buttons">
+        <label for="create"></label>
+      </li>
+
+    <!-- Join Button -->
+      <li class="check-list">
+        <input type="checkbox" name="check-buttons" id="join" class="buttons">
+        <label for="join"></label>
+      </li>
+
+    <!-- Slider -->
+      <div id="sliderBox">
+        <input type="text" id="slider" value="" name="slider" />
+      </div>
+    </ul>
+    <div id="map-container"></div>
+  </div>
+  <!-- Map Space -->
+
+  <br>
+  <div id="boxInfo" class="info">
+    <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeNav()">&times;</a>
+    <span id="information"></span>
+    <!--<center><button id="buttonshop">ADD</button></center>-->
+  </div>
+
+  <script src="js/river.js"></script>
+  <script src="js/ion.rangeSlider.js"></script>
+  <script src="js/moment.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzDgXvTkp5Y4LQWuzkCZhdM2fRQJAo7ak&callback=initMap"></script>
+
+</body>
+
+
+
+</html>

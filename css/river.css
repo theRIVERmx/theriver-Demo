@@ -1,0 +1,138 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+#map-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* <<<<<<<<<<----------------- CHECKBOXES BAR*/
+#filter-bar {
+  z-index: 1;
+  height: 85px;
+  position: relative;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li.check-list {
+  display: inline-block;
+  padding: 0 0px 0 0;
+  margin: 10px 0 10px 50px;
+}
+
+/* --- Making some style to the checkbox */
+input.buttons {
+  display: none;
+}
+
+input.buttons + label {
+  height: 65px;
+  width: 65px;
+  display: inline-block;
+  opacity: 0.2;
+}
+
+input.buttons:checked + label {
+  opacity: 1;
+}
+
+/*---- Normal CheckBoxes*/
+#join + label {
+  background: url("../assets/icons/icon_join.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#meet + label {
+  background: url("../assets/icons/icon_meet.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#stay + label {
+  background: url("../assets/icons/icon_stay.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#create + label {
+  background: url("../assets/icons/icon_work.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/*--------------------------------------------------------------*/
+#boxInfo p {
+  padding: 0px 14px 0px 14px;
+  margin: 5px ;
+}
+#boxInfo p  strong {
+	color: #FA8258;
+}
+#boxInfo h3 {
+  font-family: 'Amatic sc', serif;
+  padding: 0px 0px 0px 14px;
+  font-size: 2em;
+  color: black;
+}
+
+#boxInfo {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .8em;
+  position: fixed;
+  z-index: 2;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 30px;
+  transition: 0.5;
+  color: #6E6E6E;
+
+}
+
+#main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  transition: margin-left .5s;
+  padding: 0px;
+}
+
+.info .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    margin-left: 65px;
+    text-decoration: none;
+    color: black;
+}
+
+#sliderBox {
+  width: 500px;
+  height: 20px;
+  float: right;
+  margin-top: 0px;
+  margin-right: 50px;
+  padding: 18px;
+}

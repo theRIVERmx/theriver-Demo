@@ -1,0 +1,141 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [55.941837, -3.204503]
+		},
+		"properties": {
+			"open": {'January', 'February'},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": true,
+			"title": "Light House Hostel",
+			"marker-size": "small",
+			"image": "assets/images/light-house.png",
+			"information": "<p><strong>Hostel</strong></p><p><strong> Edinburgh, Scotland, United Kingdom </strong></p><p>How to book a night? <strong><a href=https://www.lighthousehostel.co.uk>www.lighthousehostel.co.uk</a></strong></p><p> For volunteer opportunities: <strong>wcwong94@gmail.com</strong> </p><p>Season: <strong>year round</strong></p><p>Address: <strong>20 Gilmore Place, Edinburgh, EH3 9NQ</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [29.100585, -13.623662]
+		},
+		"properties": {
+			"open": { 'March', 'October'},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": true,
+			"title": "Oasis Surf House",
+			"marker-size": "small",
+			"image": "assets/images/oasis-surf.png",
+			"information": "<p><strong>Surf Hostel</strong></p><p><strong>Lanzarote, Spain</strong></p><p>How to book it? <strong>www.oasissurfhouse.com</strong></p><p>For volunteer opportunities: <strong>oasissurfhouse@gmail.com</strong></p><p> Season: <strong>year round</strong></p><p>Address: <strong>Calle los Parranderos, 3, 35558 Soo, Las Palmas, Spain</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [42.629566, -2.104052]
+		},
+		"properties": {
+			"open": {June, December},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": false,
+			"title": "Albergue Hogar Monjardin",
+			"marker-size": "small",
+			"image": "assets/images/Albergue-hogar.png",
+			"information": "<p><strong>Hostel</strong></p><p><strong>Villamayor de Monjardin, Spain</strong></p><p>Website: <strong>www.oasistrails.org/en</strong></p><p>How to book it? <strong>first come first served</strong></p><p>For volunteer opportunities: <strong>info@oasistrails.org</strong></p> <p>Season: <strong>April 1st - Oct 31st</strong></p><p>Address: <strong>Plaza 4 Villamayor de Monjardin (NA) 31242, Spain</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [43.439096, -1.587711]
+		},
+		"properties": {
+			"open": {'January', 'May'},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": true,
+			"title": "Surf Hostel Bidart",
+			"marker-size": "small",
+			"image": "assets/images/surf-hostels-france.jpeg",
+			"information": "<p><strong>Surf Hostel</strong></p><p><strong>Bidart, France</strong><p><p>How to book it? <strong>http://www.surfhostelbiarritz.com/surf-hostel-bidart/</strong> </p><p>For volunteer opportunities: <strong>surfhostelteam@gmail.com</strong><p><p>Season: <strong>April 1st - Sep 30th</strong></p><p>Address: <strong>101 Ave Chabadenia, Bidart 64210</strong><p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [35.562153, 24.092863]
+		},
+		"properties": {
+			"open": {'February', 'August'},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": true,
+			"title": "The Way Guesthouse",
+			"marker-size": "small",
+			"image": "assets/images/the-way-guesthouse.png",
+			"information": "<p><strong>Guesthouse</strong></p><p><strong>Chania - Crete, Greece</strong></p><p>How to book it? <strong>www.thewayguesthouse.com/</strong></p> <p>For volunteer opportunities: <strong>bekah.alex@gmail.com</strong></p> <p>Season: <strong>May – Oct</strong><p><p>Address: <strong>Chorafakia, Chania, Crete</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [52.373167, 4.877252]
+		},
+		"properties": {
+			"open": {'May', 'October'},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": true,
+			"title": "Shelter Jordan",
+			"marker-size": "small",
+			"image": "assets/images/shelter-christian-hostels.png",
+			"information": "<p><strong>Hostel</strong><p><p></strong>Amsterdam, the Netherlands</strong></p><p>How to book a night? <strong>www.shelterhostelamsterdam.com</strong></p><p>For volunteer opportunities: <strong>www.youthhostelministry.org</strong></p> <p>Season: <strong>year round</strong></p><p>Address:<strong>Shelter Jordan - Bloemstraat 179, Amsterdam, 1016LA</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [52.372447, 4.899213]
+		},
+		"properties": {
+			"open": {'January', 'April'},
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": true,
+			"title": "Shelter City",
+			"marker-size": "small",
+			"image": "assets/images/shelter-christian-hostels.png",
+			"information": "<strong>Hostel</strong><p><p></strong>Amsterdam, the Netherlands</strong></p><p>How to book a night? <strong>www.shelterhostelamsterdam.com</strong></p><p>For volunteer opportunities: <strong>www.youthhostelministry.org</strong></p> <p>Season: <strong>year round</strong></p><p>Address:<strong>Shelter City - Barndesteeg 21, 1012 BV Amsterdam</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [29.556362, 34.947243]
+		},
+		"properties": {
+			"open": {'August', 'December'},
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": false,
+			"title": "Shelter Eilat",
+			"marker-size": "small",
+			"image": "assets/images/shelter-eliat.png",
+			"information": "<p><strong>Hostel + place to hang out</strong></p><p><strong>Eilat, Israel</strong><p><p>How to book it? <strong>www.shelterhostel.com</strong><p><p>For volunteer opportunities: <strong>info@shelterhostel.com</strong><p> <p>Season: <strong>year round</strong><p><p>Address: <strong>The Eshel Street 149/1. P.O. Box 816 Eilat 88104, Israel</strong><p><br>"
+		}
+}
+}]
+}
