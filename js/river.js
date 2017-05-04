@@ -1,16 +1,18 @@
 var map;
 
 markers = [];
-first = [];
-second = [];
+names = [];
+openMonth = [];
+closeMonth = [];
 check = [];
 
-var filters = {join:false, meet:false, stay:false, create:false}
+
+var filters = {join:false, meet:false, stay:false, create:false};
 
 $(function () {
 
   var $slider = $("#slider");
- 
+  
   $slider.ionRangeSlider({
     type: 'double',
     values: [
@@ -19,21 +21,32 @@ $(function () {
         "July", "August", "September", "October",
         "November", "December"
     ],
-
+    min: 1,
+    max: 12
   });
   
+
   $slider.on("change", function () {
+    
     var $this = $(this),
         value = $this.prop("value").split(";");
+        from = $this.data("from") + 1;
+        to = $this.data("to") + 1;
     
-    
-    console.log(value[0] + " - " + value[1]);
+    for(var i = 0; i < markers.length; i++) {
+      if(openMonth[i] >= from && closeMonth[i] <= to) {
+        //keep_slider = true;
+        markers[i].setVisible(true);
+      } else {
+        //keep_slider = false;
+        markers[i].setVisible(false);
+      }
+    }
   });
-
 })
 
 $(function () {
-  $('input[name=check-buttons]').change(function (e) {
+  $('input[name=check-buttons]').change(function(e) {
     map_filter(this.id);
     filter_markers();
   });
@@ -50,6 +63,7 @@ var get_set_options = function() {
   return ret_array;
 }
 
+
 var filter_markers = function() {
   set_filters = get_set_options();
   for (i = 0; i < markers.length; i++) {
@@ -58,15 +72,16 @@ var filter_markers = function() {
     for (opt=0; opt<set_filters.length; opt++) {
       if (!marker.properties[set_filters[opt]]) {
         keep = false;
-
       }
     }
+
     check[opt] = marker[opt];
     marker.setVisible(keep)
   }
 }
 
 var map_filter = function(id_val) {
+  console.log(id_val)
    if (filters[id_val]) {
     filters[id_val] = false
   }
@@ -88,7 +103,8 @@ function loadMarkers() {
         var titleText = val['properties']['title']
         var imagePlace = val['properties']['image']
         var infoPlace = val['properties']['information']
-        openH = val['properties']['open']
+        open = val['properties']['open']
+        close = val['properties']['close']
         marker = new google.maps.Marker({
           position: point,
           icon: {
@@ -104,17 +120,15 @@ function loadMarkers() {
          });
         var markerInfo = "<div><h3>" + titleText + "</h3><p>" + infoPlace + "</p><img src=" + imagePlace + "></div>"
 
-        markers.push(marker)
+        names.push(titleText);
+        markers.push(marker);
         jsonLength = markers.length;
-        first.push(openH[0]);
-        second.push(openH[1]);
-        console.log(first);
+        openMonth.push(open);
+        closeMonth.push(close);
         marker.addListener('click', function() {
           document.getElementById("boxInfo").style.width = "250px";
           document.getElementById("main").style.marginLeft = "250px";
            $('#information').html(markerInfo)
-
-
            function displayDate() {
            }
         });
@@ -131,6 +145,7 @@ function closeNav() {
 
 
 function initMap() {
+  
   var styledMapType = new google.maps.StyledMapType(
     [
       {
@@ -338,4 +353,6 @@ function initMap() {
       google.maps.event.trigger(map, "resize");
       map.setCenter(center);
     });
+
+
 }

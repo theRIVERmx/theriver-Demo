@@ -7,7 +7,8 @@
 			"coordinates": [55.941837, -3.204503]
 		},
 		"properties": {
-			"open": {'January', 'February'},
+			"open": 1,
+			"close": 12,
       "join": true,
       "meet": false,
       "stay": true,
@@ -24,7 +25,8 @@
 			"coordinates": [29.100585, -13.623662]
 		},
 		"properties": {
-			"open": { 'March', 'October'},
+			"open": 3,
+			"close": 10,
       "join": true,
       "meet": false,
       "stay": true,
@@ -41,7 +43,8 @@
 			"coordinates": [42.629566, -2.104052]
 		},
 		"properties": {
-			"open": {June, December},
+			"open": 6,
+			"close": 12,
       "join": true,
       "meet": false,
       "stay": true,
@@ -58,7 +61,8 @@
 			"coordinates": [43.439096, -1.587711]
 		},
 		"properties": {
-			"open": {'January', 'May'},
+			"open": 1,
+			"close": 5,
       "join": true,
       "meet": false,
       "stay": true,
@@ -75,7 +79,8 @@
 			"coordinates": [35.562153, 24.092863]
 		},
 		"properties": {
-			"open": {'February', 'August'},
+			"open": 2,
+			"close": 8,
       "join": true,
       "meet": false,
       "stay": true,
@@ -92,7 +97,8 @@
 			"coordinates": [52.373167, 4.877252]
 		},
 		"properties": {
-			"open": {'May', 'October'},
+			"open": 3,
+			"close": 10,
       "join": true,
       "meet": false,
       "stay": true,
@@ -109,7 +115,8 @@
 			"coordinates": [52.372447, 4.899213]
 		},
 		"properties": {
-			"open": {'January', 'April'},
+			"open": 1,
+			"close": 4,
       "join": true,
       "meet": false,
       "stay": true,
@@ -126,7 +133,8 @@
 			"coordinates": [29.556362, 34.947243]
 		},
 		"properties": {
-			"open": {'August', 'December'},
+			"open": 8,
+			"close": 12,
       "join": true,
       "meet": true,
       "stay": true,
@@ -136,6 +144,312 @@
 			"image": "assets/images/shelter-eliat.png",
 			"information": "<p><strong>Hostel + place to hang out</strong></p><p><strong>Eilat, Israel</strong><p><p>How to book it? <strong>www.shelterhostel.com</strong><p><p>For volunteer opportunities: <strong>info@shelterhostel.com</strong><p> <p>Season: <strong>year round</strong><p><p>Address: <strong>The Eshel Street 149/1. P.O. Box 816 Eilat 88104, Israel</strong><p><br>"
 		}
-}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [18.781256, 98.998979]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": false,
+			"title": "Zion Hostel & Cafe",
+			"marker-size": "small",
+			"image": "assets/images/zion-cafe-hostel.png",
+			"information": "<p><strong>Hostel + Cafe</strong></p><p><strong>Chiang Mai, Thailand</strong></p><p>How to book it? <strong>www.zioncafeandhostel.com/#!about-zion/cu4n</strong></p><p>For volunteer opportunities: <strong>info@lighthouseinaction.org</strong></p><p>Season: <strong>year round</strong></p><p>Address: <strong>169/4-5 Sridonchai Rd. Changklan, Muang, Chiangmai, Thailand 50100</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [19.357692, -99.168994]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": false,
+			"title": "Warm Heart Guesthouse",
+			"marker-size": "small",
+			"image": "assets/images/warm-heart.png",
+			"information": "<p><strong>Guesthouse + Cafe</strong></p><p><strong>Mexico City, Mexico</strong></p><p>How to book it? <strong>www.warmheartmexico.com</strong></p><p>For volunteer opportunities: <strong>cynthia.ramirezmartinez@gmail.com</strong></p><p>Season: <strong>year round</strong></p><p>Address: <strong>Calz. Mariano Matamoros 29, Del Carmen, 04100 Ciudad de México</strong><p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-41.131509, -71.271847]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": false,
+      "stay": true,
+      "create": false,
+			"title": "Shelter on the Lake",
+			"marker-size": "small",
+			"image": "assets/images/shelter-on-lake.png",
+			"information": "<p><strong>Guesthouse</strong></p><p></strong>Bariloche, Argentina</strong></p><p>Website: <strong>www.shelteronthelake.com</strong></p><p>How to book it? <strong>first come first served</strong></p><p>For volunteer opportunities: <strong>shelteronthelake@gmail.com</strong></p> <p>Address: <strong>Alma Fuerte 3012 Bariloche, Argentina</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-35.314559, 150.469613]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": false,
+      "meet": false,
+      "stay": true,
+      "create": false,
+			"title": "Surf House Narrawallee",
+			"marker-size": "small",
+			"image": "assets/images/surf-house-narrawallee.png",
+			"information": "<p><strong>Surf Hostel BnB</strong></p><p><strong>Narrawallee, Australia</strong></p><p>How to book it? <strong>www.surfhousenarrawallee.com</strong></p><p>For volunteer opportunities: <strong>surfhousenarrawallee@gmail.com</strong></p> <p>Season: <strong>year round</strong></p><p>Address: <strong>108 Matron Porter Drive, Narrawallee. NSW. 2539</strong><p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-28.561317, 153.482609]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": true,
+			"title": "Selah Farm",
+			"marker-size": "small",
+			"image": "assets/images/selah-farm.png",
+			"information": "<p><strong>Farmstay/ Retreat Centre</strong></p><p><strong>Mullumbimby, Australia</strong></p><p>How to book it? <strong>artymamma@gmail.com</strong></p><p>For volunteer opportunities: <strong>artymamma@gmail.com</strong></p> <p>Season: <strong>year round</strong></p><p>Address: <strong>113 Left Bank Road, Mullumbimby NSW 2482 Australia</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [42.878943, -8.543485]
+		},
+		"properties": {
+			"open": 1,
+			"close": 3,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Pilgrim House",
+			"marker-size": "small",
+			"image": "assets/images/pilgrim-house.png",
+			"information": "<p><strong>Welcoming centre (only for pilgrims)</strong></p><p><strong>Santiago de Compostela, Spain</strong></p><p>Website: <strong>www.pilgrimhousesantiago.com</strong></p><p>For volunteer opportunities: <strong>pilgrimhousesantiago@gmail.com</strong></p> <p>Season: <strong>April - October</strong></p><p>Address: <strong>Rua Nova 19 Santiago de Compostela Spain</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [42.514983, -2.372389]
+		},
+		"properties": {
+			"open": 3,
+			"close": 5,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Pilgrim’s Oasis",
+			"marker-size": "small",
+			"image": "assets/images/pilgrims-oasis.jpeg",
+			"information": "<p><strong>Cafe + Meditation Space</strong></p><p><strong>Viana, Spain</strong></p><p>Website: <strong>www.oasistrails.org/en</strong></p><p>For volunteer opportunities: <strong>info@oasistrails.org</strong</p> <p>Season: <strong>April 1st - Sep 30th</strong></p><p>Address: <strong>Calle Navarro Villoslada 8 Viana (NA) 31230, Spain</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [32.252793, 77.178370]
+		},
+		"properties": {
+			"open": 5,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Dylan’s Coffeehouse",
+			"marker-size": "small",
+			"image": "assets/images/dylans-coffeehouse.png",
+			"information": "<p><strong>Cafe</strong></p><p><strong>Arambol and Manali, India</strong></p><p>Website: <strong>www.dylanscoffee.com</strong></p><p>For volunteer opportunities: <strong>dylanscoffee@gmail.com</strong></p><p>Season: <strong>December - March (Arambol) May - October (Manali)</strong></p><p>Address: </strong>Arambol, North Goa, Goa, 403524, India; Distt. Kullu ( Himachal Pradesh ) India (Manali)</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [22.882982, 79.658816]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Tree Ashram",
+			"marker-size": "small",
+			"image": "assets/images/tree-ashram.png",
+			"information": "<p><strong>Ashram</strong></p><p><strong>North India (contact for more details)</strong></p><p>For volunteer opportunities: <strong>ueichholz@hotmail.com Season: September - April</strong></p><p>Address: <strong>(contact for more details)</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [28.761603, 83.834422]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Mountain Ashram",
+			"marker-size": "small",
+			"image": "assets/images/mountain-ashram.png",
+			"information": "<p><strong>Ashram</strong></p><p><strong>Northern Indian Himalayas (contact for more details)</strong></p><p>For volunteer opportunities: <strong>adamsjodelius@hotmail.com</strong></p> <p><strong>Season: March 1st - June 30th</strong></p><p>Address: <strong>(contact for more details)</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [25.985675, 82.073062]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Shekina Goa",
+			"marker-size": "small",
+			"image": "assets/images/shekina-garden.png",
+			"information": "<p><strong>Ashram</strong></p><p><strong>India (contact for more details)</strong></p><p>Website: <strong>shekina-community.squarespace.com/about</strong></p> <p>For volunteer opportunities: <strong>shekinacommunity@gmail.com</strong></p> <p>Season: <strong>November - March</strong></p><p>Address: <strong>(contact for more details)</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [30.121709, 78.328110]
+		},
+		"properties": {
+			"open": 3,
+			"close": 6,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Tent of Grace",
+			"marker-size": "small",
+			"image": "assets/images/tent-of-grace.png",
+			"information": "<p><strong>Meditation Space</strong></p><p><strong>Rishikesh, India</strong></p><p>Website: <strong>www.oasistrails.org/en</strong></p><p>For volunteer opportunities: <strong>info@oasistrails.org</strong></p><p>Season: <strong>Feb 1st - Apr 15th and Sep 15th - Dec 1st</strong></p><p>Address: <strong>Kirmola, Laxman Jhula, Rishikesh, Uttarakhand 249302, India</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [19.361460, 98.444767]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": false,
+      "create": false,
+			"title": "Shekina Garden",
+			"marker-size": "small",
+			"image": "assets/images/shekina-garden.png",
+			"information": "<p><strong>Ashram</strong><p><strong>Pai, Thailand</strong></p><p>Website: <strong>shekina-community.squarespace.com/about</strong></p> <p>For volunteer opportunities: <strong>chinua@gmail.com</strong></p><p>Season: <strong>year round</strong></p><p>Address: <strong>Pai, Thailand</strong></p><br>"
+
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [51.510382, -0.138223]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": true,
+			"title": "VIVE Hostel & Café",
+			"marker-size": "small",
+			"image": "assets/images/vive-cafe-hostel.jpeg",
+			"information": "<p><strong>Hostel + Cafe</strong></p> <p><strong>London, UK</strong></p><p>For more information: <strong>tim@skyeward.org.uk</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-25.214881, 133.747760]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": true,
+			"title": "Pilgrim Hill",
+			"marker-size": "small",
+			"image": "assets/images/shekina-garden.png",
+			"information": "<p><strong>Guesthouse</strong></p><p><strong>Tasmania, Australia</strong></p><p>Website: <strong>www.pilgrimhill.org/about.php</strong><p> <p>For more information: <strong>thebaehrs@pilgrimhill.org</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-26.646072, 153.061670]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": false,
+			"title": "Surfhouse Sunshine Coast",
+			"marker-size": "small",
+			"image": "assets/images/surf-house-sunshine-coast.jpeg",
+			"information": "<p><strong>Surf Hostel</strong></p><p><strong>Sunshine Coast, Australia</strong></p><p>For more information: <strong>surfbiarritz@gmail.com</strong></p><br>"
+		}
+}, {
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-31.951148, 115.861414]
+		},
+		"properties": {
+			"open": 1,
+			"close": 12,
+      "join": true,
+      "meet": true,
+      "stay": true,
+      "create": false,
+			"title": "Perth Hostel",
+			"marker-size": "small",
+			"image": "assets/images/shekina-garden.png",
+			"information": "<p><strong>Hostel</strong></p><p><strong>Perth, Australia</strong></p><p>For more information: <strong>tiffany.rak@gmail.com</strong></p><br>"
+		}
 }]
 }
