@@ -105,6 +105,7 @@ function loadMarkers() {
         var infoPlace = val['properties']['information']
         open = val['properties']['open']
         close = val['properties']['close']
+        //Marker Init
         marker = new google.maps.Marker({
           position: point,
           icon: {

@@ -1,10 +1,16 @@
 var map;
-var filters = { stay: false, meet: false, create: false, join: false }
-var $slider = $("#slider");
-
-markers = [];
 
 $(function () {
+  var buttons = document.getElementsByClassName("buttons");
+  for(var i = 0; i < buttons.length; i++) {
+    buttons[i].checked = false;
+  }
+});
+
+/* ------------ Slider Function */
+$(function () {
+  var $slider = $("#slider");
+  
   $slider.ionRangeSlider({
     type: 'double',
     values: [
@@ -17,36 +23,25 @@ $(function () {
     max: 12,
   });
 
+  var slider = $("#slider").data("ionRangeSlider");
+
   $slider.on("change", function() {
-    $slider_value = $(this);
+    values = get_slider(slider);
+    filterSystem(values);
   });
 })
 
-$(function () {
+/* -- Getting the sldier values -- */ 
+var get_slider = function(slider_data) {
+  var first = slider_data.result.from + 1;
+  var last = slider_data.result.to + 1;
+  months = [first, last];
+  return months;
+}
 
-  $('input[name = wo-condition]').change(function (e) {
-      set_buttons(this);
-    //conditional_rules(this);
+var filterSystem = function (slider_values) {
+  $(
+    'input[class = buttons]').change(function(e) {
+    
   })
-})
-
-var conditional_rule = function(check_buttons) {
-  
 }
-
-var set_buttons = function(check_buttons) {
-  if(check_buttons.checked == true) {
-    filters[check_buttons.id] = true;
-  } else {
-    filters[check_buttons.id] = false;
-  }
-  console.log(filters)
-}
-
-/*
-function get_slider() {
-  var $this = $(this);
-  
-  console.log($this);
-}
-*/

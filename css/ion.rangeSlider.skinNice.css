@@ -67,7 +67,8 @@
 
 .irs-min, .irs-max {
     color: #999;
-    font-size: 14px; line-height: 1.333;
+    font-family: 'Amatic sc', serif;
+    font-size: 16px; line-height: 1.333;
     text-shadow: none;
     top: 0; padding: 1px 3px;
     background: rgba(0,0,0,0.1);
@@ -80,15 +81,16 @@
 
 .irs-from, .irs-to, .irs-single {
     color: #fff;
-    font-size: 14px; line-height: 1.333;
+    font-family: 'Amatic sc', serif;
+    font-size: 28px; line-height: 1;
     text-shadow: none;
-    padding: 1px 5px;
+    padding: 1px 8px;
     background: rgba(0,0,0,0.3);
     -moz-border-radius: 3px;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 .lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single {
-    background: #999;
+    background: #616161;
 }
 
 .irs-grid-pol {
