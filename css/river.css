@@ -4,6 +4,9 @@ html, body {
   padding: 0;
 }
 
+h1 {
+ font-family: 'Amatic sc', serif;
+}
 img {
   max-width: 100%;
   max-height: 100%;
@@ -140,4 +143,15 @@ input.buttons:checked + label {
   margin-top: 0px;
   margin-right: 50px;
   padding: 18px
+}
+
+#myTextDiv {
+    color:white;
+    text-align: center;
+    padding: 10px;
+    background: rgba(204, 204, 204, 0.5);
+    width: 30%;
+    margin: auto;
+    position: relative;
+    margin-top: 12%;
 }
