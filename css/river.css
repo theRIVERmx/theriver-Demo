@@ -50,6 +50,11 @@ input.buttons + label {
   opacity: 0.2;
 }
 
+input.buttons:hover + label {
+  opacity: 0.5;
+}
+
+
 input.buttons:checked + label {
   opacity: 1;
 }
