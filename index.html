@@ -22,26 +22,26 @@
   <!--FilterNav -->
     <ul id="filter-bar">
     <!-- Stay Button -->
-      <li class="check-list">
+      <li id="stayhover" class="check-list">
         <input type="checkbox" name="check-buttons" id="stay" class="buttons">
         <label for="stay"></label>
       </li>
 
     <!-- Meet Button -->
-      <li class="check-list">
+      <li id="meethover" class="check-list">
         <input type="checkbox" name="check-buttons" id="meet" class="buttons">
         <label for="meet"></label>
       </li>
 
     <!-- Create Button -->
-      <li class="check-list">
+      <li id="createhover" class="check-list">
         <input type="checkbox" name="check-buttons" id="create" class="buttons">
         <label for="create"></label>
       </li>
 
     <!-- Join Button -->
-      <li class="check-list">
-        <input type="checkbox" name="check-buttons" id="join" class="buttons">
+      <li id="joinhover" class="check-list">
+        <input type="checkbox" name="check-buttons" id="join" class="buttons" value="Join">
         <label for="join"></label>
       </li>
 
@@ -51,9 +51,10 @@
       </div>
     </ul>
     <div id="map-container"></div>
+    <div id="myTextDiv">
+    </div>
   </div>
   <!-- Map Space -->
-
   <br>
   <div id="boxInfo" class="info">
     <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeNav()">&times;</a>

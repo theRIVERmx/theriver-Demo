@@ -362,4 +362,49 @@ function initMap() {
     
 }
 
-$(".gmnoprint").on("click", function(){ console.log("Push")});
+$("#myTextDiv").hide();
+
+$("#joinhover").mouseover(function() {
+    $("#myTextDiv").html("<h1>JOIN<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#joinhover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+$("#createhover").mouseover(function() {
+     $("#myTextDiv").html("<h1>CREATE<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#createhover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+$("#meethover").mouseover(function() {
+     $("#myTextDiv").html("<h1>MEET<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#meethover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+$("#stayhover").mouseover(function() {
+     $("#myTextDiv").html("<h1>STAY<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#stayhover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+
+var myControl = document.getElementById('myTextDiv');
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);
+
+
+
+
+
