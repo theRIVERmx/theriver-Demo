@@ -120,13 +120,16 @@ function loadMarkers() {
           properties: val['properties']
          });
         var markerInfo = "<div><h3>" + titleText + "</h3><p>" + infoPlace + "</p><img src=" + imagePlace + "></div>"
-
+        var markerPosition = marker.position;
+          
         names.push(titleText);
         markers.push(marker);
         jsonLength = markers.length;
         openMonth.push(open);
         closeMonth.push(close);
         marker.addListener('click', function() {
+           map.setZoom(5);
+            map.panTo(markerPosition);
           document.getElementById("boxInfo").style.width = "250px";
           document.getElementById("main").style.marginLeft = "250px";
            $('#information').html(markerInfo)
@@ -354,6 +357,9 @@ function initMap() {
       google.maps.event.trigger(map, "resize");
       map.setCenter(center);
     });
+    
 
-
+    
 }
+
+$(".gmnoprint").on("click", function(){ console.log("Push")});
