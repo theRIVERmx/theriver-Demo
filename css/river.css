@@ -149,9 +149,10 @@ input.buttons:checked + label {
     color:white;
     text-align: center;
     padding: 10px;
-    background: rgba(204, 204, 204, 0.5);
+    background: rgba(255, 138, 101, 0.6);
     width: 30%;
     margin: auto;
     position: relative;
     margin-top: 12%;
+    border-radius: 20px;
 }
