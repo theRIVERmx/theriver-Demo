@@ -88,6 +88,7 @@
     background: rgba(0,0,0,0.3);
     -moz-border-radius: 3px;
     border-radius: 8px;
+    margin: -13px;
 }
 .lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single {
     background: #616161;
