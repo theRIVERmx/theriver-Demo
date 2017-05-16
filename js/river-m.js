@@ -1,4 +1,5 @@
 var map;
+var months0 = [];
 
 $(function () {
   var buttons = document.getElementsByClassName("buttons");
@@ -31,7 +32,7 @@ $(function () {
   });
 })
 
-/* -- Getting the sldier values -- */ 
+/* -- Getting the slider values -- */ 
 var get_slider = function(slider_data) {
   var first = slider_data.result.from + 1;
   var last = slider_data.result.to + 1;
@@ -40,8 +41,19 @@ var get_slider = function(slider_data) {
 }
 
 var filterSystem = function (slider_values) {
-  $(
-    'input[class = buttons]').change(function(e) {
-    
-  })
+    var buttons = document.getElementsByClassName("buttons");
+    console.log(slider_values)
+    loadMarkers();
+    console.log(months0);
+}
+
+function loadMarkers () {
+    geojson_url = "js/collection00.geojson"
+    $.getJSON(geojson_url, function(result) {
+        var data = result['features']
+        $.each(data, function(key, val) {
+            var open = val['properties']['open'];
+            months0.push(open);
+        });
+    });
 }
