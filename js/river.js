@@ -10,36 +10,35 @@ check = [];
 
 
 $("input").change(function(){
-    var arr = [1, 2, 3];
-    var checkarray = [1, 2, 4];
+    var arr1 = ["meet", "stay", "join"];
+    var checkarray1 = ["meet", "stay", "create", "join"];
     var count = 0
 
-    for(var i=0;i<checkarray.length;i++)
-     {
-        if($.inArray(checkarray[i],arr) ==-1) {
+    /* algorithm to increase the value of count if a value of arr (selected buttons from user) is in checkarray (property of the hostel in JSON)*/
+
+    function checkButton(arr, checkarray) {
+        for(var i=0;i<checkarray.length;i++)
+         {
+            if($.inArray(checkarray[i],arr) ==-1) {
+            }
+            else {
+                count = count + 1
+            }
+         }
+
+        console.log(count);
+        //Check whether the counted values are the same like the array length of the choosen values
+        if (count == arr.length) {
+            return true
         }
         else {
-            count = count + 1
-        }
-     }
-
-    if (count == arr.length) {
-        console.log("True");
-    }
-    else {
-        console.log("False");
-    }
-
-    console.log(count);
-    /*var found = false;
-    for (var i = 0; i < checkarray.length; i++) {
-        if (arr.indexOf(checkarray[i]) > -1) {
-            found = true;
-            break;
+            return false
         }
     }
-    console.log(found);
-    */
+
+    var firstTry = checkButton(arr1, checkarray1);
+    console.log(firstTry);
+
     var searchIDs = $('input:checked').map(function(){
 
     return $(this).val();
