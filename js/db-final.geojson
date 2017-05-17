@@ -7,11 +7,9 @@
 			"coordinates": [55.941837, -3.204503]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": true,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "stay", "create"],
 			"title": "Light House Hostel",
 			"marker-size": "small",
 			"image": "assets/images/light-house.png",
@@ -24,11 +22,9 @@
 			"coordinates": [29.100585, -13.623662]
 		},
 		"properties": {
-			"open": [3, 10],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": true,
+			"open": 3,
+			"close": 10,
+            "categories": ["join", "stay", "create"],
 			"title": "Oasis Surf House",
 			"marker-size": "small",
 			"image": "assets/images/oasis-surf.png",
@@ -41,11 +37,9 @@
 			"coordinates": [42.629566, -2.104052]
 		},
 		"properties": {
-			"open": [6, 12],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": false,
+			"open": 6,
+			"close": 12,
+            "categories": ["join", "stay"],
 			"title": "Albergue Hogar Monjardin",
 			"marker-size": "small",
 			"image": "assets/images/Albergue-hogar.png",
@@ -58,11 +52,9 @@
 			"coordinates": [43.439096, -1.587711]
 		},
 		"properties": {
-			"open": [1, 5],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": true,
+			"open": 1,
+			"close": 5,
+            "categories": ["join", "stay", "create"],
 			"title": "Surf Hostel Bidart",
 			"marker-size": "small",
 			"image": "assets/images/surf-hostels-france.jpeg",
@@ -75,11 +67,9 @@
 			"coordinates": [35.562153, 24.092863]
 		},
 		"properties": {
-			"open": [2, 8],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": true,
+			"open": 2,
+			"close": 8,
+            "categories": ["join", "stay", "create"],
 			"title": "The Way Guesthouse",
 			"marker-size": "small",
 			"image": "assets/images/the-way-guesthouse.png",
@@ -92,11 +82,9 @@
 			"coordinates": [52.373167, 4.877252]
 		},
 		"properties": {
-			"open": [5, 10],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": true,
+			"open": 3,
+			"close": 10,
+            "categories": ["join", "stay", "create"],
 			"title": "Shelter Jordan",
 			"marker-size": "small",
 			"image": "assets/images/shelter-christian-hostels.png",
@@ -109,11 +97,9 @@
 			"coordinates": [52.372447, 4.899213]
 		},
 		"properties": {
-			"open": [1, 4],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": true,
+			"open": 1,
+			"close": 4,
+            "categories": ["join", "stay", "create"],
 			"title": "Shelter City",
 			"marker-size": "small",
 			"image": "assets/images/shelter-christian-hostels.png",
@@ -126,11 +112,9 @@
 			"coordinates": [29.556362, 34.947243]
 		},
 		"properties": {
-			"open": [8, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": false,
+			"open": 8,
+			"close": 12,
+            "categories": ["join", "meet", "stay"],
 			"title": "Shelter Eilat",
 			"marker-size": "small",
 			"image": "assets/images/shelter-eliat.png",
@@ -143,11 +127,9 @@
 			"coordinates": [18.781256, 98.998979]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay"],
 			"title": "Zion Hostel & Cafe",
 			"marker-size": "small",
 			"image": "assets/images/zion-cafe-hostel.png",
@@ -160,11 +142,9 @@
 			"coordinates": [19.357692, -99.168994]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay"],
 			"title": "Warm Heart Guesthouse",
 			"marker-size": "small",
 			"image": "assets/images/warm-heart.png",
@@ -177,11 +157,9 @@
 			"coordinates": [-41.131509, -71.271847]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": false,
-      "stay": true,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "stay"],
 			"title": "Shelter on the Lake",
 			"marker-size": "small",
 			"image": "assets/images/shelter-on-lake.png",
@@ -194,11 +172,9 @@
 			"coordinates": [-35.314559, 150.469613]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": false,
-      "meet": false,
-      "stay": true,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["stay"],
 			"title": "Surf House Narrawallee",
 			"marker-size": "small",
 			"image": "assets/images/surf-house-narrawallee.png",
@@ -211,11 +187,9 @@
 			"coordinates": [-28.561317, 153.482609]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": true,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay", "create"],
 			"title": "Selah Farm",
 			"marker-size": "small",
 			"image": "assets/images/selah-farm.png",
@@ -228,11 +202,9 @@
 			"coordinates": [42.878943, -8.543485]
 		},
 		"properties": {
-			"open": [1, 3],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 1,
+			"close": 3,
+            "categories": ["join", "meet"],
 			"title": "Pilgrim House",
 			"marker-size": "small",
 			"image": "assets/images/pilgrim-house.png",
@@ -245,11 +217,9 @@
 			"coordinates": [42.514983, -2.372389]
 		},
 		"properties": {
-			"open": [3, 5],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 3,
+			"close": 5,
+            "categories": ["join", "meet"],
 			"title": "Pilgrim’s Oasis",
 			"marker-size": "small",
 			"image": "assets/images/pilgrims-oasis.jpeg",
@@ -262,11 +232,9 @@
 			"coordinates": [32.252793, 77.178370]
 		},
 		"properties": {
-			"open": [5, 12],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 5,
+			"close": 12,
+            "categories": ["join", "meet"],
 			"title": "Dylan’s Coffeehouse",
 			"marker-size": "small",
 			"image": "assets/images/dylans-coffeehouse.png",
@@ -279,11 +247,9 @@
 			"coordinates": [22.882982, 79.658816]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet"],
 			"title": "Tree Ashram",
 			"marker-size": "small",
 			"image": "assets/images/tree-ashram.png",
@@ -296,11 +262,9 @@
 			"coordinates": [28.761603, 83.834422]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet"],
 			"title": "Mountain Ashram",
 			"marker-size": "small",
 			"image": "assets/images/mountain-ashram.png",
@@ -313,11 +277,9 @@
 			"coordinates": [25.985675, 82.073062]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet"],
 			"title": "Shekina Goa",
 			"marker-size": "small",
 			"image": "assets/images/shekina-garden.png",
@@ -330,11 +292,9 @@
 			"coordinates": [30.121709, 78.328110]
 		},
 		"properties": {
-			"open": [3, 6],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 3,
+			"close": 6,
+            "categories": ["join", "meet"],
 			"title": "Tent of Grace",
 			"marker-size": "small",
 			"image": "assets/images/tent-of-grace.png",
@@ -347,11 +307,9 @@
 			"coordinates": [19.361460, 98.444767]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": false,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet"],
 			"title": "Shekina Garden",
 			"marker-size": "small",
 			"image": "assets/images/shekina-garden.png",
@@ -365,11 +323,9 @@
 			"coordinates": [51.510382, -0.138223]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": true,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay", "create"],
 			"title": "VIVE Hostel & Café",
 			"marker-size": "small",
 			"image": "assets/images/vive-cafe-hostel.jpeg",
@@ -382,11 +338,9 @@
 			"coordinates": [-25.214881, 133.747760]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": true,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay", "create"],
 			"title": "Pilgrim Hill",
 			"marker-size": "small",
 			"image": "assets/images/shekina-garden.png",
@@ -399,11 +353,9 @@
 			"coordinates": [-26.646072, 153.061670]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay"],
 			"title": "Surfhouse Sunshine Coast",
 			"marker-size": "small",
 			"image": "assets/images/surf-house-sunshine-coast.jpeg",
@@ -416,11 +368,9 @@
 			"coordinates": [-31.951148, 115.861414]
 		},
 		"properties": {
-			"open": [1, 12],
-      "join": true,
-      "meet": true,
-      "stay": true,
-      "create": false,
+			"open": 1,
+			"close": 12,
+            "categories": ["join", "meet", "stay"],
 			"title": "Perth Hostel",
 			"marker-size": "small",
 			"image": "assets/images/shekina-garden.png",

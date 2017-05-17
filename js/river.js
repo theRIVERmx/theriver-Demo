@@ -49,7 +49,6 @@ $("input").change(function(){
     var firstTry = checkButton(getButtons, checkarray1);
     console.log(firstTry);
 
-
 });
 
 var filters = {join:false, meet:false, stay:false, create:false};
@@ -138,7 +137,7 @@ var map_filter = function(id_val) {
 
 function loadMarkers() {
   var infoWindow = new google.maps.InfoWindow()
-  geojson_url = 'js/collection00.geojson'
+  geojson_url = 'js/db.geojson'
   $.getJSON(geojson_url, function(result) {
       data = result['features']
       $.each(data, function(key, val) {
