@@ -11,8 +11,18 @@ check = [];
 
 $("input").change(function(){
     var arr1 = ["meet", "stay", "join"];
-    var checkarray1 = ["meet", "stay", "create", "join"];
+    var checkarray1 = ["meet", "stay"];
     var count = 0
+
+    //get the button which are checked from the user
+
+    var getButtons = $('input:checked').map(function(){
+
+    return $(this).val();
+
+    });
+
+    console.log(getButtons.get());
 
     /* algorithm to increase the value of count if a value of arr (selected buttons from user) is in checkarray (property of the hostel in JSON)*/
 
@@ -36,16 +46,9 @@ $("input").change(function(){
         }
     }
 
-    var firstTry = checkButton(arr1, checkarray1);
+    var firstTry = checkButton(getButtons, checkarray1);
     console.log(firstTry);
 
-    var searchIDs = $('input:checked').map(function(){
-
-    return $(this).val();
-
-    });
-
-    console.log(searchIDs.get());
 
 });
 
