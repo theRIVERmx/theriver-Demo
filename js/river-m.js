@@ -43,8 +43,6 @@ var get_slider = function(slider_data) {
 var filterSystem = function (slider_values) {
     var buttons = document.getElementsByClassName("buttons");
     console.log(slider_values)
-    loadMarkers();
-    console.log(months0);
 }
 
 function loadMarkers () {

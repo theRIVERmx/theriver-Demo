@@ -364,7 +364,7 @@ function initMap() {
 
 $("#myTextDiv").hide();
 
-$("#joinhover").mouseover(function() {
+$("#joinhover").mouseover(function () {
     $("#myTextDiv").html("<h1>JOIN<h1>");
     $("#myTextDiv").show();
 });
