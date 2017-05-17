@@ -1,3 +1,4 @@
+
 var map;
 
 markers = [];
@@ -6,6 +7,48 @@ openMonth = [];
 closeMonth = [];
 check = [];
 
+
+
+$("input").change(function(){
+    var arr = [1, 2, 3];
+    var checkarray = [1, 2, 4];
+    var count = 0
+
+    for(var i=0;i<checkarray.length;i++)
+     {
+        if($.inArray(checkarray[i],arr) ==-1) {
+        }
+        else {
+            count = count + 1
+        }
+     }
+
+    if (count == arr.length) {
+        console.log("True");
+    }
+    else {
+        console.log("False");
+    }
+
+    console.log(count);
+    /*var found = false;
+    for (var i = 0; i < checkarray.length; i++) {
+        if (arr.indexOf(checkarray[i]) > -1) {
+            found = true;
+            break;
+        }
+    }
+    console.log(found);
+    */
+    var searchIDs = $('input:checked').map(function(){
+
+    return $(this).val();
+
+    });
+
+    console.log(searchIDs.get());
+
+});
 
 var filters = {join:false, meet:false, stay:false, create:false};
 
@@ -401,9 +444,8 @@ $("#stayhover").mouseout(function() {
 });
 
 
-var myControl = document.getElementById('myTextDiv');
-map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);
-
+/*var myControl = document.getElementById('myTextDiv');
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
 
 
 
