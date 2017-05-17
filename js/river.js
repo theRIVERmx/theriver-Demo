@@ -51,6 +51,20 @@ $("input").change(function(){
 
 });
 
+//get data from the JSON by using getJSON
+
+  geojson_url = 'js/collection00.geojson'
+  $.getJSON(geojson_url, function(result) {
+      data = result['features']
+      $.each(data, function(key, val) {
+        var titleText = val['properties']['title']
+        console.log(titleText);
+      });
+  });
+
+
+
+
 var filters = {join:false, meet:false, stay:false, create:false};
 
 $(function () {
