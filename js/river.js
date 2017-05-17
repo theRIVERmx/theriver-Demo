@@ -1,3 +1,4 @@
+
 var map;
 
 markers = [];
@@ -6,6 +7,50 @@ openMonth = [];
 closeMonth = [];
 check = [];
 
+
+
+$("input").change(function(){
+    var arr1 = ["meet", "stay", "join"];
+    var checkarray1 = ["meet", "stay"];
+    var count = 0
+
+    //get the button which are checked from the user
+
+    var getButtons = $('input:checked').map(function(){
+
+    return $(this).val();
+
+    });
+
+    console.log(getButtons.get());
+
+    /* algorithm to increase the value of count if a value of arr (selected buttons from user) is in checkarray (property of the hostel in JSON)*/
+
+    function checkButton(arr, checkarray) {
+        for(var i=0;i<checkarray.length;i++)
+         {
+            if($.inArray(checkarray[i],arr) ==-1) {
+            }
+            else {
+                count = count + 1
+            }
+         }
+
+        console.log(count);
+        //Check whether the counted values are the same like the array length of the choosen values
+        if (count == arr.length) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    var firstTry = checkButton(getButtons, checkarray1);
+    console.log(firstTry);
+
+
+});
 
 var filters = {join:false, meet:false, stay:false, create:false};
 
@@ -401,9 +446,8 @@ $("#stayhover").mouseout(function() {
 });
 
 
-var myControl = document.getElementById('myTextDiv');
-map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);
-
+/*var myControl = document.getElementById('myTextDiv');
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
 
 
 
