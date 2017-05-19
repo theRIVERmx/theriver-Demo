@@ -89,9 +89,7 @@ function checkFilter() {
 
 $(function () {
   $('input[name=check-buttons]').change(function(e) {
-
       filter();
-      defaultSlider();
     checkFilter();
   });
 
