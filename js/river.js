@@ -1,11 +1,12 @@
 
 var map;
 
-markers = [];
-names = [];
-openMonth = [];
-closeMonth = [];
-check = [];
+var markers = [];
+var categories = [];
+var names = [];
+var openMonth = [];
+var closeMonth = [];
+var check = [];
 
 
 
@@ -22,11 +23,12 @@ $("input").change(function(){
 
     });
 
-    console.log(getButtons.get());
+    //console.log(getButtons.get());
 
     /* algorithm to increase the value of count if a value of arr (selected buttons from user) is in checkarray (property of the hostel in JSON)*/
 
     function checkButton(arr, checkarray) {
+        count = 0;
         for(var i=0;i<checkarray.length;i++)
          {
             if($.inArray(checkarray[i],arr) ==-1) {
@@ -36,7 +38,7 @@ $("input").change(function(){
             }
          }
 
-        console.log(count);
+        //console.log(count);
         //Check whether the counted values are the same like the array length of the choosen values
         if (count == arr.length) {
             return true
@@ -49,18 +51,26 @@ $("input").change(function(){
     var firstTry = checkButton(getButtons, checkarray1);
     console.log(firstTry);
 
+     geojson_url = 'js/db-final.geojson'
+     $.getJSON(geojson_url, function(result) {
+          data = result['features']
+          $.each(data, function(key, val) {
+            var titleText = val['properties']['categories']
+            var realCheck = checkButton(getButtons, titleText);
+            //console.log(realCheck);
+            //console.log(titleText);
+
+            if (realCheck == true) {
+                //console.log("Trueeeee mofa");
+            };
+          });
+      });
+
 });
 
 //get data from the JSON by using getJSON
 
-  geojson_url = 'js/collection00.geojson'
-  $.getJSON(geojson_url, function(result) {
-      data = result['features']
-      $.each(data, function(key, val) {
-        var titleText = val['properties']['title']
-        console.log(titleText);
-      });
-  });
+
 
 
 
@@ -105,8 +115,7 @@ $(function () {
 
 $(function () {
   $('input[name=check-buttons]').change(function(e) {
-    map_filter(this.id);
-    filter_markers();
+    filter();
   });
 
 })
@@ -124,6 +133,7 @@ var get_set_options = function() {
 
 var filter_markers = function() {
   set_filters = get_set_options();
+    console.log(set_filters)
   for (i = 0; i < markers.length; i++) {
     marker = markers[i];
     keep = true;
@@ -146,12 +156,108 @@ var map_filter = function(id_val) {
    else {
     filters[id_val] = true
   }
+    console.log(filters);
 }
 
+//modified functions from Can
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+        setMapOnAll(null);
+      }
+
+// Shows any markers currently in the array.
+function showMarkers() {
+        setMapOnAll(map);
+      }
+
+function statusData() {
+    var getButtons = $('input:checked').map(function(){
+        return $(this).val();
+    });
+    return getButtons;
+}
+
+function filter() {
+
+    var status = statusData();
+    console.log(status.get());
+    console.log(markers.length);
+    for (var i = 0; i < markers.length; i++) {
+        console.log("Test");
+          var marker = markers[i]
+          var cat = categories[i];
+          console.log(cat);
+          var realCheck = checkButton(status, cat);
+          console.log(realCheck);
+        if (realCheck == false) {
+            marker.setVisible(false);
+        }
+        else {
+            marker.setVisible(true);
+        }
+    }
+}
+
+function getData(coord1, coord2) {
+
+            /*geojson_url = 'js/db-final.geojson'
+             $.getJSON(geojson_url, function(result) {
+                  data = result['features']
+                  $.each(data, function(key, val) {
+                    var coordLocation = val['geometry']['coordinates']
+                    console.log(coordLocation);*/
+
+                    var point = new google.maps.LatLng(
+                        parseFloat(coord1),
+                        parseFloat(coord2));
+
+                    var marker = new google.maps.Marker({
+                        position: point,
+                        title:"Hello World!",
+                        icon: {
+                            path: 'M0,50 A50,50,0 1 1 100,50 A50,50,0 1 1 0,50 Z',
+                            fillColor: '#ff8a65',
+                            fillOpacity: 0.9,
+                            scale: 0.18,
+                            strokeColor: '#ff8a65'
+                          }
+                    });
+
+                  return marker;
+                  };
+
+function checkButton(arr, checkarray) {
+            count = 0;
+            for(var i=0;i<checkarray.length;i++)
+             {
+                if($.inArray(checkarray[i],arr) ==-1) {
+                }
+                else {
+                    count = count + 1
+                }
+             }
+
+            //console.log(count);
+            //Check whether the counted values are the same like the array length of the choosen values
+            if (count == arr.length) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
 
 function loadMarkers() {
   var infoWindow = new google.maps.InfoWindow()
-  geojson_url = 'js/db.geojson'
+  geojson_url = 'js/db-final.geojson'
   $.getJSON(geojson_url, function(result) {
       data = result['features']
       $.each(data, function(key, val) {
@@ -161,6 +267,8 @@ function loadMarkers() {
         var titleText = val['properties']['title']
         var imagePlace = val['properties']['image']
         var infoPlace = val['properties']['information']
+        var category = val['properties']['categories'];
+
         open = val['properties']['open']
         close = val['properties']['close']
         //Marker Init
@@ -182,6 +290,7 @@ function loadMarkers() {
           
         names.push(titleText);
         markers.push(marker);
+        categories.push(category);
         jsonLength = markers.length;
         openMonth.push(open);
         closeMonth.push(close);
@@ -206,7 +315,7 @@ function closeNav() {
 
 
 
-function initMap() {
+window.initMap = function() {
   
   var styledMapType = new google.maps.StyledMapType(
     [
