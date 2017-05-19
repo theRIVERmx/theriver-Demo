@@ -34,7 +34,7 @@ $(function () {
       slider_changing = get_slider(slider);
       filterSystem(slider_changing);
   });
-})
+});
 
 var get_slider_start = function(data_slider){
     var initialFrom = data_slider.from + 1;

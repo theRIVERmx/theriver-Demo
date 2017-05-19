@@ -19,223 +19,6 @@ function defaultSlider() {
 
 }
 
-
-//get data from the JSON by using getJSON
-
-
-
-
-
-
-var filters = {join:false, meet:false, stay:false, create:false};
-
-$(function () {
-
-  var $slider = $("#slider");
-  
-  $slider.ionRangeSlider({
-    type: 'double',
-    values: [
-        "January", "February", "March",
-        "April", "May", "June",
-        "July", "August", "September", "October",
-        "November", "December"
-    ],
-    min: 1,
-    max: 12
-
-  });
-  
-
-
-  $slider.on("change", function () {
-    filter();
-    checkFilter();
-    var $this = $(this),
-        value = $this.prop("value").split(";");
-        from = $this.data("from") + 1;
-        to = $this.data("to") + 1;
-        console.log(value);
-        console.log(from);
-        console.log(to);
-    
-    for(var i = 0; i < markers.length; i++) {
-      if(openMonth[i] >= from && closeMonth[i] <= to) {
-        sliderCheck[i] = true;
-        //keep_slider = true;
-        //markers[i].setVisible(true);
-      } else {
-          sliderCheck[i] = false;
-        //keep_slider = false;
-        //markers[i].setVisible(false);
-      }
-    }
-  });
-})
-
-function checkFilter() {
-    console.log(sliderCheck);
-    console.log(realCheckProbe);
-
-    for (var i = 0; i < markers.length; i++) {
-        if (sliderCheck[i] == true && realCheckProbe[i] == true) {
-            console.log("Du wirst markiert Bruder");
-        }
-        else {
-            console.log("Idiot");
-        }
-    }
-}
-
-$(function () {
-  $('input[name=check-buttons]').change(function(e) {
-
-      filter();
-      defaultSlider();
-    checkFilter();
-  });
-
-})
-
-var get_set_options = function() {
-  ret_array = []
-  for (option in filters) {
-    if (filters[option]) {
-      ret_array.push(option)
-    }
-  }
-  return ret_array;
-}
-
-
-var filter_markers = function() {
-  set_filters = get_set_options();
-    console.log(set_filters)
-  for (i = 0; i < markers.length; i++) {
-    marker = markers[i];
-    keep = true;
-    for (opt=0; opt<set_filters.length; opt++) {
-      if (!marker.properties[set_filters[opt]]) {
-        keep = false;
-      }
-    }
-
-    check[opt] = marker[opt];
-    marker.setVisible(keep)
-  }
-}
-
-var map_filter = function(id_val) {
-  console.log(id_val)
-   if (filters[id_val]) {
-    filters[id_val] = false
-  }
-   else {
-    filters[id_val] = true
-  }
-    console.log(filters);
-}
-
-//modified functions from Can
-
-// Sets the map on all markers in the array.
-function setMapOnAll(map) {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(map);
-        }
-      }
-
-// Removes the markers from the map, but keeps them in the array.
-function clearMarkers() {
-        setMapOnAll(null);
-      }
-
-// Shows any markers currently in the array.
-function showMarkers() {
-        setMapOnAll(map);
-      }
-
-function statusData() {
-    var getButtons = $('input:checked').map(function(){
-        return $(this).val();
-    });
-    return getButtons;
-}
-
-function filter() {
-
-    var status = statusData();
-    console.log(status.get());
-    console.log(markers.length);
-    for (var i = 0; i < markers.length; i++) {
-        console.log("Test");
-          var marker = markers[i]
-          var cat = categories[i];
-          var checkTheSlider = sliderCheck[i];
-          //console.log(checkTheSlider);
-          //console.log(cat);
-          var realCheck = checkButton(status, cat);
-           realCheckProbe[i] = checkButton(status, cat);
-          //console.log(realCheck);
-        if (realCheck == true) {
-            marker.setVisible(true);
-        }
-        else {
-            marker.setVisible(false);
-        }
-    }
-}
-
-function getData(coord1, coord2) {
-
-            /*geojson_url = 'js/db-final.geojson'
-             $.getJSON(geojson_url, function(result) {
-                  data = result['features']
-                  $.each(data, function(key, val) {
-                    var coordLocation = val['geometry']['coordinates']
-                    console.log(coordLocation);*/
-
-                    var point = new google.maps.LatLng(
-                        parseFloat(coord1),
-                        parseFloat(coord2));
-
-                    var marker = new google.maps.Marker({
-                        position: point,
-                        title:"Hello World!",
-                        icon: {
-                            path: 'M0,50 A50,50,0 1 1 100,50 A50,50,0 1 1 0,50 Z',
-                            fillColor: '#ff8a65',
-                            fillOpacity: 0.9,
-                            scale: 0.18,
-                            strokeColor: '#ff8a65'
-                          }
-                    });
-
-                  return marker;
-                  };
-
-function checkButton(arr, checkarray) {
-            count = 0;
-            for(var i=0;i<checkarray.length;i++)
-             {
-                if($.inArray(checkarray[i],arr) ==-1) {
-                }
-                else {
-                    count = count + 1
-                }
-             }
-
-            //console.log(count);
-            //Check whether the counted values are the same like the array length of the choosen values
-            if (count == arr.length) {
-                return true
-            }
-            else {
-                return false
-            }
-        }
-
-
 function loadMarkers() {
   var infoWindow = new google.maps.InfoWindow()
   geojson_url = 'js/db-final.geojson'
@@ -288,6 +71,7 @@ function loadMarkers() {
 
   });
 }
+
 
 function closeNav() {
     document.getElementById("boxInfo").style.width = "0px";
@@ -509,6 +293,251 @@ window.initMap = function() {
 
     
 }
+//get data from the JSON by using getJSON
+
+
+
+var get_slider_start = function(data_slider){
+    var initialFrom = data_slider.from + 1;
+    var initialTo = data_slider.to + 1;
+    var initial_state = [initialFrom, initialTo]
+    return initial_state;
+}
+/* -- Getting the slider values -- */
+var get_slider = function(slider_data) {
+  var first = slider_data.result.from + 1;
+  var last = slider_data.result.to + 1;
+  months = [first, last];
+  return months;
+}
+
+
+
+var filterSystem = function (slider_values) {
+    console.log(slider_values);
+    //console.log(realCheckProbe);
+     for(var i = 0; i < markers.length; i++) {
+      if((closeMonth[i] < slider_values[0]) || (slider_values[1] <= openMonth[i])) {
+        sliderCheck[i] = false;
+        //keep_slider = true;
+        //markers[i].setVisible(true);
+      } else {
+          sliderCheck[i] = true;
+        //keep_slider = false;
+        //markers[i].setVisible(false);
+      }
+    }
+    //console.log(sliderCheck);
+}
+
+$(function () {
+
+  var $slider = $("#slider");
+
+  $slider.ionRangeSlider({
+    type: 'double',
+    values: [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September", "October",
+        "November", "December"
+    ],
+    min: 1,
+    max: 12,
+    onStart: function (data) {
+           var initial_array = [];
+           initial_array = get_slider_start(data);
+           filterSystem(initial_array);
+        }
+
+  });
+
+ var slider = $("#slider").data("ionRangeSlider");
+
+  $slider.on("change", function () {
+    var slider_changing = [];
+    slider_changing = get_slider(slider);
+    filterSystem(slider_changing);
+    filter();
+    checkFilter();
+
+  });
+})
+
+function checkFilter() {
+    //console.log(sliderCheck);
+    //console.log(realCheckProbe);
+    var k = 0;
+    var p = 0;
+    for (var i = 0; i < markers.length; i++) {
+        if (sliderCheck[i] == true && realCheckProbe[i] == true) {
+            k = k + 1
+            markers[i].setVisible(true);
+            //console.log("Du wirst markiert Bruder");
+        }
+        else {
+            markers[i].setVisible(false);
+            p = p + 1
+            //console.log("Idiot");
+        }
+    }
+    console.log(p);
+    console.log(k);
+}
+
+$(function () {
+    var slider = $("#slider").data("ionRangeSlider");
+
+  $('input[name=check-buttons]').change(function(e) {
+    var slider_changing = [];
+    slider_changing = get_slider(slider);
+    filterSystem(slider_changing);
+    filter();
+    checkFilter();
+  });
+
+})
+
+var get_set_options = function() {
+  ret_array = []
+  for (option in filters) {
+    if (filters[option]) {
+      ret_array.push(option)
+    }
+  }
+  return ret_array;
+}
+
+
+var filter_markers = function() {
+  set_filters = get_set_options();
+    console.log(set_filters)
+  for (i = 0; i < markers.length; i++) {
+    marker = markers[i];
+    keep = true;
+    for (opt=0; opt<set_filters.length; opt++) {
+      if (!marker.properties[set_filters[opt]]) {
+        keep = false;
+      }
+    }
+
+    check[opt] = marker[opt];
+    marker.setVisible(keep)
+  }
+}
+
+var map_filter = function(id_val) {
+  console.log(id_val)
+   if (filters[id_val]) {
+    filters[id_val] = false
+  }
+   else {
+    filters[id_val] = true
+  }
+    console.log(filters);
+}
+
+//modified functions from Can
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+        setMapOnAll(null);
+      }
+
+// Shows any markers currently in the array.
+function showMarkers() {
+        setMapOnAll(map);
+      }
+
+function statusData() {
+    var getButtons = $('input:checked').map(function(){
+        return $(this).val();
+    });
+    return getButtons;
+}
+
+function filter() {
+
+    var status = statusData();
+    //console.log(status.get());
+    //console.log(markers.length);
+    for (var i = 0; i < markers.length; i++) {
+        //console.log("Test");
+          var marker = markers[i]
+          var cat = categories[i];
+          var checkTheSlider = sliderCheck[i];
+          //console.log(checkTheSlider);
+          //console.log(cat);
+          var realCheck = checkButton(status, cat);
+           realCheckProbe[i] = checkButton(status, cat);
+          //console.log(realCheck);
+        /*if (realCheck == true) {
+            marker.setVisible(true);
+        }
+        else {
+            marker.setVisible(false);
+        }*/
+    }
+}
+
+function getData(coord1, coord2) {
+
+            /*geojson_url = 'js/db-final.geojson'
+             $.getJSON(geojson_url, function(result) {
+                  data = result['features']
+                  $.each(data, function(key, val) {
+                    var coordLocation = val['geometry']['coordinates']
+                    console.log(coordLocation);*/
+
+                    var point = new google.maps.LatLng(
+                        parseFloat(coord1),
+                        parseFloat(coord2));
+
+                    var marker = new google.maps.Marker({
+                        position: point,
+                        title:"Hello World!",
+                        icon: {
+                            path: 'M0,50 A50,50,0 1 1 100,50 A50,50,0 1 1 0,50 Z',
+                            fillColor: '#ff8a65',
+                            fillOpacity: 0.9,
+                            scale: 0.18,
+                            strokeColor: '#ff8a65'
+                          }
+                    });
+
+                  return marker;
+                  };
+
+function checkButton(arr, checkarray) {
+            count = 0;
+            for(var i=0;i<checkarray.length;i++)
+             {
+                if($.inArray(checkarray[i],arr) ==-1) {
+                }
+                else {
+                    count = count + 1
+                }
+             }
+
+            //console.log(count);
+            //Check whether the counted values are the same like the array length of the choosen values
+            if (count == arr.length) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+
+
+
 
 $("#myTextDiv").hide();
 
@@ -554,4 +583,19 @@ map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
 
 
 
+function testFunktion() {
+    var h1 = 1;
+    var h2 = 4;
+    var s1 = 4;
+    var s2 = 11;
 
+    if(h2 < s1 || s2 < h1) {
+        console.log(false);
+    }
+    else {
+        console.log(true);
+    }
+
+}
+
+testFunktion();
