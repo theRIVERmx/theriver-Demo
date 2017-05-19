@@ -1,6 +1,3 @@
-var map;
-var months0 = [];
-
 $(function () {
   var buttons = document.getElementsByClassName("buttons");
   for(var i = 0; i < buttons.length; i++) {
@@ -22,16 +19,29 @@ $(function () {
     ],
     min: 1,
     max: 12,
+       onStart: function (data) {
+           var initial_array = []; 
+           initial_array = get_slider_start(data);
+           filterSystem(initial_array);
+        }
+      
   });
 
   var slider = $("#slider").data("ionRangeSlider");
 
   $slider.on("change", function() {
-    values = get_slider(slider);
-    filterSystem(values);
+      var slider_changing = [];
+      slider_changing = get_slider(slider);
+      filterSystem(slider_changing);
   });
 })
 
+var get_slider_start = function(data_slider){
+    var initialFrom = data_slider.from + 1;
+    var initialTo = data_slider.to + 1;
+    var initial_state = [initialFrom, initialTo]
+    return initial_state;
+}
 /* -- Getting the slider values -- */ 
 var get_slider = function(slider_data) {
   var first = slider_data.result.from + 1;
@@ -41,17 +51,5 @@ var get_slider = function(slider_data) {
 }
 
 var filterSystem = function (slider_values) {
-    var buttons = document.getElementsByClassName("buttons");
-    console.log(slider_values)
-}
-
-function loadMarkers () {
-    geojson_url = "js/collection00.geojson"
-    $.getJSON(geojson_url, function(result) {
-        var data = result['features']
-        $.each(data, function(key, val) {
-            var open = val['properties']['open'];
-            months0.push(open);
-        });
-    });
+    console.log(slider_values);
 }
