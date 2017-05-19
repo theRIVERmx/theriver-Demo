@@ -1,5 +1,4 @@
 var map;
-var months0 = [];
 
 $(function () {
   var buttons = document.getElementsByClassName("buttons");
@@ -22,15 +21,29 @@ $(function () {
     ],
     min: 1,
     max: 12,
+       onStart: function (data) {
+           var initial_array = []; 
+           initial_array = get_slider_start(data);
+           filterSystem(initial_array);
+        }
+      
   });
 
   var slider = $("#slider").data("ionRangeSlider");
 
   $slider.on("change", function() {
-    values = get_slider(slider);
-    filterSystem(values);
+      var slider_changing = [];
+      slider_changing = get_slider(slider);
+      filterSystem(slider_changing);
   });
 })
+
+var get_slider_start = function(data_slider){
+    var initialFrom = data_slider.from + 1;
+    var initialTo = data_slider.to + 1;
+    var initial_state = [initialFrom, initialTo]
+    return initial_state;
+}
 
 /* -- Getting the slider values -- */ 
 var get_slider = function(slider_data) {
@@ -41,8 +54,7 @@ var get_slider = function(slider_data) {
 }
 
 var filterSystem = function (slider_values) {
-    var buttons = document.getElementsByClassName("buttons");
-    console.log(slider_values)
+    console.log(slider_values);
 }
 
 function loadMarkers () {
