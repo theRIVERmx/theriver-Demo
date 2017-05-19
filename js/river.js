@@ -1,139 +1,36 @@
 
+var map;
 
-=======
 var markers = [];
 var categories = [];
 var names = [];
 var openMonth = [];
 var closeMonth = [];
 var check = [];
+var sliderCheck = [];
+var jsonLength;
+var realCheckProbe = [];
 
-
-
-$("input").change(function(){
-    var arr1 = ["meet", "stay", "join"];
-    var checkarray1 = ["meet", "stay"];
-    var count = 0
-
-    //get the button which are checked from the user
-
-    var getButtons = $('input:checked').map(function(){
-
-    return $(this).val();
-
-    });
-
-    //console.log(getButtons.get());
-
-    /* algorithm to increase the value of count if a value of arr (selected buttons from user) is in checkarray (property of the hostel in JSON)*/
-
-    function checkButton(arr, checkarray) {
-        count = 0;
-        for(var i=0;i<checkarray.length;i++)
-         {
-            if($.inArray(checkarray[i],arr) ==-1) {
-            }
-            else {
-                count = count + 1
-            }
-         }
-
-        //console.log(count);
-        //Check whether the counted values are the same like the array length of the choosen values
-        if (count == arr.length) {
-            return true
-        }
-        else {
-            return false
-        }
+function defaultSlider() {
+    for (var i = 0; i < markers.length; i++) {
+        sliderCheck[i] = true;
+        console.log(sliderCheck)
     }
 
-<<<<<<< HEAD
-}
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
-=======
-    var firstTry = checkButton(getButtons, checkarray1);
-    console.log(firstTry);
-
-     geojson_url = 'js/db-final.geojson'
-     $.getJSON(geojson_url, function(result) {
-          data = result['features']
-          $.each(data, function(key, val) {
-            var titleText = val['properties']['categories']
-            var realCheck = checkButton(getButtons, titleText);
-            //console.log(realCheck);
-            //console.log(titleText);
-
-            if (realCheck == true) {
-                //console.log("Trueeeee mofa");
-            };
-          });
-      });
->>>>>>> parent of e868eef... SliderCheck
-
-});
-
-function getData(coord1, coord2) {
-
-<<<<<<< HEAD
-            /*geojson_url = 'js/db-final.geojson'
-             $.getJSON(geojson_url, function(result) {
-                  data = result['features']
-                  $.each(data, function(key, val) {
-                    var coordLocation = val['geometry']['coordinates']
-                    console.log(coordLocation);*/
-=======
-
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
-
-                    var point = new google.maps.LatLng(
-                        parseFloat(coord1),
-                        parseFloat(coord2));
-
-                    var marker = new google.maps.Marker({
-                        position: point,
-                        title:"Hello World!",
-                        icon: {
-                            path: 'M0,50 A50,50,0 1 1 100,50 A50,50,0 1 1 0,50 Z',
-                            fillColor: '#ff8a65',
-                            fillOpacity: 0.9,
-                            scale: 0.18,
-                            strokeColor: '#ff8a65'
-                          }
-                    });
-
-                  return marker;
-                  };
-
-
-function deleteMarkers() {
-
-<<<<<<< HEAD
 }
 
 
-function checkButton(arr, checkarray) {
-            count = 0;
-            for(var i=0;i<checkarray.length;i++)
-             {
-                if($.inArray(checkarray[i],arr) ==-1) {
-                }
-                else {
-                    count = count + 1
-                }
-             }
+//get data from the JSON by using getJSON
 
-            //console.log(count);
-            //Check whether the counted values are the same like the array length of the choosen values
-            if (count == arr.length) {
-                return true
-            }
-            else {
-                return false
-            }
-        }
 
-=======
+
+
+
+
+var filters = {join:false, meet:false, stay:false, create:false};
+
+$(function () {
+
   var $slider = $("#slider");
   
   $slider.ionRangeSlider({
@@ -146,84 +43,71 @@ function checkButton(arr, checkarray) {
     ],
     min: 1,
     max: 12
+
   });
   
 
+
   $slider.on("change", function () {
-    
+    filter();
+    checkFilter();
     var $this = $(this),
         value = $this.prop("value").split(";");
         from = $this.data("from") + 1;
         to = $this.data("to") + 1;
+        console.log(value);
+        console.log(from);
+        console.log(to);
     
     for(var i = 0; i < markers.length; i++) {
       if(openMonth[i] >= from && closeMonth[i] <= to) {
+        sliderCheck[i] = true;
         //keep_slider = true;
-        markers[i].setVisible(true);
+        //markers[i].setVisible(true);
       } else {
+          sliderCheck[i] = false;
         //keep_slider = false;
-        markers[i].setVisible(false);
+        //markers[i].setVisible(false);
       }
     }
   });
 })
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
+
+function checkFilter() {
+    console.log(sliderCheck);
+    console.log(realCheckProbe);
+
+    for (var i = 0; i < markers.length; i++) {
+        if (sliderCheck[i] == true && realCheckProbe[i] == true) {
+            console.log("Du wirst markiert Bruder");
+        }
+        else {
+            console.log("Idiot");
+        }
+    }
+}
 
 $(function () {
-<<<<<<< HEAD
-    $("input").change(function(){
-        var arr1 = ["meet", "stay", "join"];
-        var checkarray1 = ["meet", "stay"];
-        var count = 0
-        getData();
-        //get the button which are checked from the user
-        var getButtons = $('input:checked').map(function(){
-=======
   $('input[name=check-buttons]').change(function(e) {
-<<<<<<< HEAD
+
       filter();
+      defaultSlider();
     checkFilter();
-=======
-    filter();
->>>>>>> parent of e868eef... SliderCheck
   });
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
 
-        return $(this).val();
+})
 
-        });
+var get_set_options = function() {
+  ret_array = []
+  for (option in filters) {
+    if (filters[option]) {
+      ret_array.push(option)
+    }
+  }
+  return ret_array;
+}
 
-        console.log(getButtons.get());
 
-
-        var firstTry = checkButton(getButtons, checkarray1);
-        console.log(firstTry);
-
-         geojson_url = 'js/db-final.geojson'
-         $.getJSON(geojson_url, function(result) {
-              data = result['features']
-              $.each(data, function(key, val) {
-                var coord1 = val['geometry']['coordinates'][0];
-                var coord2 = val['geometry']['coordinates'][1];
-                var titleText = val['properties']['categories']
-                var realCheck = checkButton(getButtons, titleText);
-                //console.log(titleText);
-                //console.log(realCheck);
-
-                if (realCheck == false) {
-                    var coord1 = val['geometry']['coordinates'][0];
-                    var coord2 = val['geometry']['coordinates'][1];
-                    var name = val['properties']['title'];
-                    console.log(name);
-                    var marker = getData(coord1, coord2);
-                    console.log(marker);
-                };
-              });
-         });
-
-<<<<<<< HEAD
-    });
-=======
 var filter_markers = function() {
   set_filters = get_set_options();
     console.log(set_filters)
@@ -235,16 +119,12 @@ var filter_markers = function() {
         keep = false;
       }
     }
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
 
-});
+    check[opt] = marker[opt];
+    marker.setVisible(keep)
+  }
+}
 
-<<<<<<< HEAD
-$(document).ready(function(){
-    //load the default map
-
-    
-=======
 var map_filter = function(id_val) {
   console.log(id_val)
    if (filters[id_val]) {
@@ -291,14 +171,17 @@ function filter() {
         console.log("Test");
           var marker = markers[i]
           var cat = categories[i];
-          console.log(cat);
+          var checkTheSlider = sliderCheck[i];
+          //console.log(checkTheSlider);
+          //console.log(cat);
           var realCheck = checkButton(status, cat);
-          console.log(realCheck);
-        if (realCheck == false) {
-            marker.setVisible(false);
+           realCheckProbe[i] = checkButton(status, cat);
+          //console.log(realCheck);
+        if (realCheck == true) {
+            marker.setVisible(true);
         }
         else {
-            marker.setVisible(true);
+            marker.setVisible(false);
         }
     }
 }
@@ -352,15 +235,8 @@ function checkButton(arr, checkarray) {
             }
         }
 
-<<<<<<< HEAD
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
 
-    // Loading the markers
-
-    /*function loadMarkers() {
-=======
 function loadMarkers() {
->>>>>>> parent of e868eef... SliderCheck
   var infoWindow = new google.maps.InfoWindow()
   geojson_url = 'js/db-final.geojson'
   $.getJSON(geojson_url, function(result) {
@@ -411,13 +287,15 @@ function loadMarkers() {
       });
 
   });
-}*/
+}
 
-    /* algorithm to increase the value of count if a value of arr (selected buttons from user) is in checkarray (property of the hostel in JSON)*/
+function closeNav() {
+    document.getElementById("boxInfo").style.width = "0px";
+    document.getElementById("main").style.marginLeft = "0px";
+}
 
 
-<<<<<<< HEAD
-=======
+
 window.initMap = function() {
   
   var styledMapType = new google.maps.StyledMapType(
@@ -633,52 +511,47 @@ window.initMap = function() {
 }
 
 $("#myTextDiv").hide();
->>>>>>> e868eef4ca616198fcdbf9e95f3687d1fe0429fd
 
-    //get data from the JSON by using getJSON
-
-    $("#myTextDiv").hide();
-
-    $("#joinhover").mouseover(function () {
-        $("#myTextDiv").html("<h1>JOIN<h1>");
-        $("#myTextDiv").show();
-    });
-
-    $("#joinhover").mouseout(function() {
-        $("#myTextDiv").hide();
-    });
-
-    $("#createhover").mouseover(function() {
-         $("#myTextDiv").html("<h1>CREATE<h1>");
-        $("#myTextDiv").show();
-    });
-
-    $("#createhover").mouseout(function() {
-        $("#myTextDiv").hide();
-    });
-
-    $("#meethover").mouseover(function() {
-         $("#myTextDiv").html("<h1>MEET<h1>");
-        $("#myTextDiv").show();
-    });
-
-    $("#meethover").mouseout(function() {
-        $("#myTextDiv").hide();
-    });
-
-    $("#stayhover").mouseover(function() {
-         $("#myTextDiv").html("<h1>STAY<h1>");
-        $("#myTextDiv").show();
-    });
-
-    $("#stayhover").mouseout(function() {
-        $("#myTextDiv").hide();
-    });
-
-
-    /*var myControl = document.getElementById('myTextDiv');
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
+$("#joinhover").mouseover(function () {
+    $("#myTextDiv").html("<h1>JOIN<h1>");
+    $("#myTextDiv").show();
 });
+
+$("#joinhover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+$("#createhover").mouseover(function() {
+     $("#myTextDiv").html("<h1>CREATE<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#createhover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+$("#meethover").mouseover(function() {
+     $("#myTextDiv").html("<h1>MEET<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#meethover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+$("#stayhover").mouseover(function() {
+     $("#myTextDiv").html("<h1>STAY<h1>");
+    $("#myTextDiv").show();
+});
+
+$("#stayhover").mouseout(function() {
+    $("#myTextDiv").hide();
+});
+
+
+/*var myControl = document.getElementById('myTextDiv');
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
+
 
 
 
