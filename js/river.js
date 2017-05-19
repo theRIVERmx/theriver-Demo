@@ -1,3 +1,6 @@
+var map;
+var markers = [];
+var categories = [];
 window.initMap = function() {
 
         var styledMapType = new google.maps.StyledMapType(
@@ -209,6 +212,18 @@ window.initMap = function() {
         //getData();
 
         // Load Marker
+    loadMarkers();
+
+
+    google.maps.event.addDomListener(window, "resize", function() {
+          var center = map.getCenter();
+          google.maps.event.trigger(map, "resize");
+          map.setCenter(center);
+        });
+
+
+
+    }
 
 function loadMarkers() {
   var infoWindow = new google.maps.InfoWindow()
@@ -216,7 +231,6 @@ function loadMarkers() {
   $.getJSON(geojson_url, function(result) {
       data = result['features']
       $.each(data, function(key, val) {
-
         var point = new google.maps.LatLng(
                 parseFloat(val['geometry']['coordinates'][0]),
                 parseFloat(val['geometry']['coordinates'][1]));
@@ -226,50 +240,76 @@ function loadMarkers() {
         open = val['properties']['open']
         close = val['properties']['close']
         //Marker Init
-        marker = new google.maps.Marker({
-          position: point,
-          icon: {
-            path: 'M0,50 A50,50,0 1 1 100,50 A50,50,0 1 1 0,50 Z',
-            fillColor: '#ff8a65',
-            fillOpacity: 0.9,
-            scale: 0.18,
-            strokeColor: '#ff8a65'
-          },
-          title: titleText,
-          map: map,
-          properties: val['properties'],
-        });
+        var category = val['properties']['categories'];
 
+             marker = new google.maps.Marker({
+              position: point,
+              icon: {
+                path: 'M0,50 A50,50,0 1 1 100,50 A50,50,0 1 1 0,50 Z',
+                fillColor: '#ff8a65',
+                fillOpacity: 0.9,
+                scale: 0.18,
+                strokeColor: '#ff8a65'
+              },
+              title: titleText,
+              map: map,
+              properties: val['properties'],
+            });
 
-          var getButtons = $('input:checked').map(function(){
-                    return $(this).val();
-                  });
-
-          console.log(getButtons.get());
-
-          var cat = val['properties']['categories'];
-          console.log(cat);
-          var realCheck = checkButton(getButtons, cat);
-          console.log(realCheck);
-          if (realCheck == false) {
-            marker.setVisible(false);
-          }
+            markers.push(marker);
+            categories.push(category)
 
       });
-
+      console.log(markers);
+      console.log(categories);
   });
 }
 
-loadMarkers();
-        google.maps.event.addDomListener(window, "resize", function() {
-          var center = map.getCenter();
-          google.maps.event.trigger(map, "resize");
-          map.setCenter(center);
-        });
+// Sets the map on all markers in the array.
+      function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+// Removes the markers from the map, but keeps them in the array.
+      function clearMarkers() {
+        setMapOnAll(null);
+      }
 
 
+// Shows any markers currently in the array.
+      function showMarkers() {
+        setMapOnAll(map);
+      }
 
+
+function statusData() {
+    var getButtons = $('input:checked').map(function(){
+        return $(this).val();
+    });
+    return getButtons;
+}
+
+function filter() {
+    var status = statusData();
+    console.log(status.get());
+    console.log(markers.length);
+    for (var i = 0; i < markers.length; i++) {
+        console.log("Test");
+          var marker = markers[i]
+          var cat = categories[i];
+          console.log(cat);
+          var realCheck = checkButton(status, cat);
+          console.log(realCheck);
+        if (realCheck == false) {
+            marker.setVisible(false);
+        }
+        else {
+            marker.setVisible(true);
+        }
     }
+}
 
 
 
@@ -302,9 +342,7 @@ function getData(coord1, coord2) {
                   };
 
 
-function deleteMarkers() {
 
-}
 
 
 function checkButton(arr, checkarray) {
@@ -331,45 +369,7 @@ function checkButton(arr, checkarray) {
 
 $(function () {
     $("input").change(function(){
-        var arr1 = ["meet", "stay", "join"];
-        var checkarray1 = ["meet", "stay"];
-        var count = 0
-        getData();
-        //get the button which are checked from the user
-        var getButtons = $('input:checked').map(function(){
-
-        return $(this).val();
-
-        });
-
-        console.log(getButtons.get());
-
-
-        var firstTry = checkButton(getButtons, checkarray1);
-        console.log(firstTry);
-
-         geojson_url = 'js/db-final.geojson'
-         $.getJSON(geojson_url, function(result) {
-              data = result['features']
-              $.each(data, function(key, val) {
-                var coord1 = val['geometry']['coordinates'][0];
-                var coord2 = val['geometry']['coordinates'][1];
-                var titleText = val['properties']['categories']
-                var realCheck = checkButton(getButtons, titleText);
-                //console.log(titleText);
-                //console.log(realCheck);
-
-                if (realCheck == false) {
-                    var coord1 = val['geometry']['coordinates'][0];
-                    var coord2 = val['geometry']['coordinates'][1];
-                    var name = val['properties']['title'];
-                    console.log(name);
-                    var marker = getData(coord1, coord2);
-                    console.log(marker);
-                };
-              });
-         });
-
+        filter();
     });
 
 });
