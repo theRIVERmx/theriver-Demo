@@ -10,6 +10,7 @@ var check = [];
 var sliderCheck = [];
 var jsonLength;
 var realCheckProbe = [];
+var basket = [];
 
 function defaultSlider() {
     for (var i = 0; i < markers.length; i++) {
@@ -59,6 +60,7 @@ function loadMarkers() {
         openMonth.push(open);
         closeMonth.push(close);
         marker.addListener('click', function() {
+            $("#shoppingButton").css("margin-right", "25%");
            map.setZoom(5);
             map.panTo(markerPosition);
           document.getElementById("boxInfo").style.width = "250px";
@@ -76,6 +78,8 @@ function loadMarkers() {
 function closeNav() {
     document.getElementById("boxInfo").style.width = "0px";
     document.getElementById("main").style.marginLeft = "0px";
+    $("#shoppingButton").css("margin-right", "5%");
+    map.setZoom(2);
 }
 
 
@@ -578,10 +582,82 @@ $("#stayhover").mouseout(function() {
 });
 
 
+
+$(function () {
+
+  var $sliderUser = $("#sliderUser");
+
+  $sliderUser.ionRangeSlider({
+    type: 'double',
+    values: [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September", "October",
+        "November", "December"
+    ],
+    min: 1,
+    max: 12,
+        });
+    var sliderUser = $("#sliderUser").data("ionRangeSlider");
+  });
+
+
+
+var counterBasket = 0;
+var newHtml = "";
+
+$("#addBasket").click(function() {
+    console.log("Hwelllloo");
+    var testInfo = $("#information").find("h3").html();
+    if (counterBasket > 2) {
+        alert("Reached 3 hostels!");
+    }
+    else {
+        console.log("Ich bin im ELSE")
+        for (var i = 0; i < names.length; i++) {
+
+            if (testInfo == names[i]) {
+                console.log("Ich bin im IF")
+                basket[counterBasket] = i;
+                console.log(basket);
+
+                var displayName = names[basket[counterBasket]];
+                console.log(displayName);
+                var displayOpenMonth = openMonth[basket[counterBasket]];
+                var displayCloseMonth = closeMonth[basket[counterBasket]];
+
+                newHtml += "<br><h3>" + displayName + "</h3>  " + displayOpenMonth + " until " + displayCloseMonth;
+                console.log(newHtml);
+                counterBasket = counterBasket + 1;
+                }
+
+            }
+        }
+
+
+
+});
+
+
+
+
+$("#shoppingButton").click(function() {
+    console.log("Halllllooo");
+    $("#map-container").toggle(500);
+    $("#results").html(newHtml);
+    $("#userOptions").toggle(1000);
+
+});
+
 /*var myControl = document.getElementById('myTextDiv');
 map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
 
-
+/*position: relative;
+    z-index: 1;
+    left: -25px;
+    top: 1px;
+    cursor:pointer;
+    width: 0;*/
 
 function testFunktion() {
     var h1 = 1;

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="css/ion.rangeSlider.skinNice.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
@@ -51,20 +52,36 @@
       </div>
     </ul>
     <div id="map-container"></div>
+    <div id="userOptions">
+        <div id="optionBox">
+
+            <h2>Your choosen hostels!</h2>
+            <input type="text" id="sliderUser" value="" name="slider" />
+            <div id="results">
+
+            </div>
+
+        </div>
+
+
+      </div>
     <div id="myTextDiv">
     </div>
+    <div id="footer"><ul id="filter-bar">
+        <i id="shoppingButton" class="fa fa-suitcase fa-3x"></i></ul></div>
   </div>
   <!-- Map Space -->
   <br>
   <div id="boxInfo" class="info">
     <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeNav()">&times;</a>
     <span id="information"></span>
+    <input id="addBasket" type="button" name="button1" value="+" />
   </div>
-
   <script src="js/river.js"></script>
   <script src="js/ion.rangeSlider.js"></script>
   <script src="js/moment.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzDgXvTkp5Y4LQWuzkCZhdM2fRQJAo7ak&callback=initMap"></script>
+
 
 </body>
 
