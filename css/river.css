@@ -139,7 +139,7 @@ input.buttons:checked + label {
     color: black;
 }
 
-#sliderBox {
+.sliderBox {
   width: 500px;
   height: 20px;
   float: right;
@@ -246,6 +246,21 @@ input.buttons:checked + label {
     margin-top: 4%;
     border-radius: 20px;
     padding: 10px;
+}
+
+.sliderBase {
+    width: 60%;
+    float:right;
+}
+
+.HostelName {
+    width:40%;
+    float: left;
+}
+
+.boxSlider {
+    height: 62px;
+    margin-top: 30px;
 }
 
 

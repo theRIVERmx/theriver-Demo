@@ -585,27 +585,35 @@ $("#stayhover").mouseout(function() {
 
 $(function () {
 
-  var $sliderUser = $("#sliderUser");
+  function createSlider(von, bis, nummer) {
+        var word = "#range" + nummer + "";
+        console.log(word);
+        var testRange = $(word);
 
-  $sliderUser.ionRangeSlider({
-    type: 'double',
-    values: [
-        "January", "February", "March",
-        "April", "May", "June",
-        "July", "August", "September", "October",
-        "November", "December"
-    ],
-    min: 1,
-    max: 12,
+      testRange.ionRangeSlider({
+        type: 'double',
+        values: [
+            "January", "February", "March",
+            "April", "May", "June",
+            "July", "August", "September", "October",
+            "November", "December"
+        ],
+        min: 1,
+        max: 12,
+        from: von,
+        to: bis,
+        disable: true
         });
-    var sliderUser = $("#sliderUser").data("ionRangeSlider");
-  });
+  };
+    /*createSlider(4,12,1);
+    createSlider(3,10,2);
+    createSlider(1,5,3);*/
+
 
 
 
 var counterBasket = 0;
 var newHtml = "";
-
 $("#addBasket").click(function() {
     console.log("Hwelllloo");
     var testInfo = $("#information").find("h3").html();
@@ -623,17 +631,18 @@ $("#addBasket").click(function() {
 
                 var displayName = names[basket[counterBasket]];
                 console.log(displayName);
-                var displayOpenMonth = openMonth[basket[counterBasket]];
-                var displayCloseMonth = closeMonth[basket[counterBasket]];
+                var displayOpenMonth = openMonth[basket[counterBasket]]-1;
+                var displayCloseMonth = closeMonth[basket[counterBasket]]-1;
 
-                newHtml += "<br><h3>" + displayName + "</h3>  " + displayOpenMonth + " until " + displayCloseMonth;
+                newHtml += "<br><h2>" + displayName + "</h2>";
                 console.log(newHtml);
+                createSlider(displayOpenMonth, displayCloseMonth, counterBasket+1);
                 counterBasket = counterBasket + 1;
                 }
 
             }
         }
-
+//
 
 
 });
@@ -644,8 +653,11 @@ $("#addBasket").click(function() {
 $("#shoppingButton").click(function() {
     console.log("Halllllooo");
     $("#map-container").toggle(500);
-    $("#results").html(newHtml);
+    $(".HostelName").html(newHtml);
+    //$(".sliderBase").html(sliderHtml);
     $("#userOptions").toggle(1000);
+
+});
 
 });
 
