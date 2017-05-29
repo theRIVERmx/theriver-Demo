@@ -545,6 +545,7 @@ function checkButton(arr, checkarray) {
 
 $("#myTextDiv").hide();
 
+
 $("#joinhover").mouseover(function () {
     $("#myTextDiv").html("<h1>JOIN<h1>");
     $("#myTextDiv").show();
@@ -610,11 +611,14 @@ $(function () {
     createSlider(1,5,3);*/
 
 
-
+$("#successBox").hide();
 
 var counterBasket = 0;
 var newHtml = "";
 $("#addBasket").click(function() {
+    $("#successBox").fadeIn(400);
+    $("#successBox").fadeOut(800);
+    $(".sliderBase").show();
     console.log("Hwelllloo");
     var testInfo = $("#information").find("h3").html();
     if (counterBasket > 2) {
@@ -650,16 +654,30 @@ $("#addBasket").click(function() {
 
 
 
-$("#shoppingButton").click(function() {
-    console.log("Halllllooo");
-    $("#map-container").toggle(500);
-    $(".HostelName").html(newHtml);
-    //$(".sliderBase").html(sliderHtml);
-    $("#userOptions").toggle(1000);
+    $("#shoppingButton").click(function() {
+        console.log("Halllllooo");
+        $("#map-container").toggle(500);
+        $(".HostelName").html(newHtml);
+        //$(".sliderBase").html(sliderHtml);
+        $("#userOptions").toggle(1000);
+
+
+
+    });
+
+    $("#deleteButton").click(function() {
+        console.log("Hello");
+        $("#map-container").toggle(500);
+        $("#userOptions").toggle(1000);
+        $(".sliderBase").hide();
+        counterBasket = 0;
+        newHtml = "";
+
+    });
 
 });
 
-});
+
 
 /*var myControl = document.getElementById('myTextDiv');
 map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);*/
