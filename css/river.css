@@ -229,7 +229,6 @@ input.buttons:checked + label {
   top: 0;
   left: 0;
   z-index: 0;
-  display: none;
   margin-top: 85px;
   overflow: scroll;
   margin-bottom: 60px;

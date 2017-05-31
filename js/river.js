@@ -11,6 +11,7 @@ var sliderCheck = [];
 var jsonLength;
 var realCheckProbe = [];
 var basket = [];
+var statusOptions = ($("#userOptions").css("display"));
 
 function defaultSlider() {
     for (var i = 0; i < markers.length; i++) {
@@ -542,13 +543,13 @@ function checkButton(arr, checkarray) {
 
 
 
-
 $("#myTextDiv").hide();
 
 
 $("#joinhover").mouseover(function () {
     $("#myTextDiv").html("<h1>JOIN<h1>");
     $("#myTextDiv").show();
+
 });
 
 $("#joinhover").mouseout(function() {
@@ -616,8 +617,6 @@ $("#successBox").hide();
 var counterBasket = 0;
 var newHtml = "";
 $("#addBasket").click(function() {
-    $("#successBox").fadeIn(400);
-    $("#successBox").fadeOut(800);
     $(".sliderBase").show();
     console.log("Hwelllloo");
     var testInfo = $("#information").find("h3").html();
@@ -625,6 +624,8 @@ $("#addBasket").click(function() {
         alert("Reached 3 hostels!");
     }
     else {
+        $("#successBox").fadeIn(800);
+        $("#successBox").fadeOut(1200);
         console.log("Ich bin im ELSE")
         for (var i = 0; i < names.length; i++) {
 
@@ -660,6 +661,7 @@ $("#addBasket").click(function() {
         $(".HostelName").html(newHtml);
         //$(".sliderBase").html(sliderHtml);
         $("#userOptions").toggle(1000);
+        console.log($("#userOptions").css("display"));
 
 
 
@@ -677,6 +679,13 @@ $("#addBasket").click(function() {
 
 });
 
+function checkIt() {
+    if (statusOptions == "none") {
+        return false
+    } else {
+        return true
+    }
+}
 
 
 /*var myControl = document.getElementById('myTextDiv');
