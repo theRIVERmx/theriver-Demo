@@ -729,7 +729,7 @@ $("#nextButton1").click(function() {
 $("#nextButton2").click(function() {
     $("#tutorialBox3").show("slow");
     $("#tutorialBox2").hide("slow");
-    var TutorialInfo = "<div><h3>This area shows the name of the Hostel</h3><p>Here you can find more information, contact details and a nice picture of the hostel!</p></div>"
+    var TutorialInfo = "<div><h3>This area shows the name of the Hostel</h3><p>Here you can find more information, contact details and a nice picture of the hostel!</p><p>The '+' button adds the hostel into your basket.</p></div>"
     $('#information').html(TutorialInfo)
     $("#shoppingButton").css("margin-right", "25%");
     document.getElementById("boxInfo").style.width = "250px";
