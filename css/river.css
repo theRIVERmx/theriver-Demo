@@ -263,7 +263,7 @@ input.buttons:checked + label {
     padding-right: 20px;
 }
 
-#deleteButton {
+.whiteButton {
   display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -319,4 +319,72 @@ input.buttons:checked + label {
   -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
   transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
 
+}
+
+.whiteButtonTut {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: right;
+  width: 15%;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font: normal normal bold 20px/normal "Amatic sc", Times, serif;
+  color: rgba(255,138,108,1);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #ffffff;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  padding-right: 20px;
+}
+
+.tutorialBox {
+    color:white;
+    text-align: left;
+    padding: 10px;
+    background: rgba(255, 138, 101, 0.8);
+    font: normal 18px "Amatic sc", Helvetica, sans-serif;
+    width: 25%;
+    position: relative;
+    border-radius: 20px;
+    height: 22%;
+    font-weight: bold;
+}
+
+#tutorialBox1 {
+    margin: 1% 0px 0px 5%;
+
+}
+
+#tutorialBox2 {
+    float: right;
+    margin: 1% 10% 0px 0px;
+
+}
+
+#tutorialBox3 {
+    margin:auto;
+    margin-top: 10%;
+}
+
+#tutorialBox4 {
+    float: right;
+    margin: 17% 3% 0px 0px;
+}
+
+#nextButton4 {
+    width: 40%;
+}
+
+#endButton1 {
+    margin-left: 4px;
 }

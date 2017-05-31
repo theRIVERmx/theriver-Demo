@@ -714,3 +714,33 @@ function testFunktion() {
 }
 
 testFunktion();
+
+//Website Tutorial
+
+$(".tutorialBox").hide();
+
+$("#tutorialBox1").show();
+
+$("#nextButton1").click(function() {
+    $("#tutorialBox2").show("slow");
+    $("#tutorialBox1").hide("slow");
+});
+
+$("#nextButton2").click(function() {
+    $("#tutorialBox3").show("slow");
+    $("#tutorialBox2").hide("slow");
+});
+
+$("#nextButton3").click(function() {
+    $("#tutorialBox4").show("slow");
+    $("#tutorialBox3").hide("slow");
+});
+
+$("#nextButton4").click(function() {
+    $("#tutorialBox4").hide("slow");
+});
+
+$("#endButton1").click(function() {
+    $("#tutorialBox1").hide("slow");
+});
+
