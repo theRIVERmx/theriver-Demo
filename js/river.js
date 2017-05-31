@@ -719,7 +719,7 @@ testFunktion();
 
 $(".tutorialBox").hide();
 
-$("#tutorialBox1").show();
+$("#tutorialBox1").delay(2500).show("slow");
 
 $("#nextButton1").click(function() {
     $("#tutorialBox2").show("slow");
@@ -729,9 +729,16 @@ $("#nextButton1").click(function() {
 $("#nextButton2").click(function() {
     $("#tutorialBox3").show("slow");
     $("#tutorialBox2").hide("slow");
+    var TutorialInfo = "<div><h3>This area shows the name of the Hostel</h3><p>Here you can find more information, contact details and a nice picture of the hostel!</p></div>"
+    $('#information').html(TutorialInfo)
+    $("#shoppingButton").css("margin-right", "25%");
+    document.getElementById("boxInfo").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+
 });
 
 $("#nextButton3").click(function() {
+    closeNav();
     $("#tutorialBox4").show("slow");
     $("#tutorialBox3").hide("slow");
 });
